@@ -1,0 +1,18 @@
+.nav {
+    padding: 16px;
+    margin-top: 8px;
+    border: 1px solid salmon;
+}
+.nav a {
+    text-decoration: none;
+    color: black;
+    padding: 0 8px;
+}
+.product {
+    padding: 16px;
+}
+.product_list a {
+    text-decoration: none;
+    color: black;
+    padding: 0 8px;
+}
