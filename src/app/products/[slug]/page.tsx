@@ -7,6 +7,13 @@ type Props = {
   }
 }
 
+// 상위 metadata의 description 등을 쓰되, title만 동적으로 변경
+export function generateMetadata({params}: Props) {
+  return{
+    title: `제품의 이름: ${params.slug}`
+  }
+};
+
 export default function ProductDetailPage({params}: Props) {
   if(params.slug === 'nothing') {
     notFound();
