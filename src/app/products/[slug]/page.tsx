@@ -2,7 +2,7 @@ import React from 'react'
 import { notFound, redirect } from "next/navigation";
 import { getProduct, getProducts } from '@/service/products';
 import Image from 'next/image';
-import GoProductsButton from '@/components/goProductsButton';
+import GoProductsButton from '@/components/GoProductsButton';
 
 // 3초마다 데이터를 다시 받아오도록 명시
 // 해당 선언을 하는 것만으로 렌더링 방식을 ISR로 변경 가능
