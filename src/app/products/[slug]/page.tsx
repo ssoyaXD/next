@@ -1,8 +1,8 @@
 import React from 'react'
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getProduct, getProducts } from '@/service/products';
 import Image from 'next/image';
-import productImage from '../../../../public/images/'
+import GoProductsButton from '@/components/goProductsButton';
 
 // 3초마다 데이터를 다시 받아오도록 명시
 // 해당 선언을 하는 것만으로 렌더링 방식을 ISR로 변경 가능
@@ -27,13 +27,15 @@ export default async function ProductDetailPage({params: {slug}}: Props) {
 
   // 만일, 제품을 찾지 못했을 경우엔 미리 만들어둔 Not Found 페이지를 출력
   if(!product) {
-    notFound();
+    redirect('/products');
+    //notFound();
   }
   // 서버 파일에 있는 데이터 중 해당 제품의 정보를 찾아서 그걸 보여줌
   return (
     <div>
-      <Image src={`/images/${product.image}`} alt={product.name} width='300' height='300'></Image>
       <h1>{product.name} 제품 설명 페이지</h1>
+      <Image src={`/images/${product.image}`} alt={product.name} width='300' height='300'></Image>
+      <GoProductsButton/>
     </div>
   )
 }
